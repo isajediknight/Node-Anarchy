@@ -7,6 +7,8 @@
 * Manage blocks by page / category
 * RSS Feed for Blog posts
 * [Use Adapt.js](http://adapt.960.gs/ "Adapt.js") for styling
+* Forum
+* Blog
 
 ### Completed
 
@@ -17,6 +19,7 @@
 * Execute multiple queries for a single page load (dynamic - user specific)
 * Support multiple node configuration for high availability
 * Usage - save off IP Address, timestamp and page visited
+* Ability to schedule Blog Posts to be published at a specific time
 
 ### Completed
 * Prevent scripts from being executed from URL parameters (clean URLs hit)

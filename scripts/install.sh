@@ -6,9 +6,22 @@
 # How to run:
 # bash ./install.sh
 
+# Add node redis?
+
 # Create list of installed packages via apt-get
 apt-mark showauto > temp.txt
 apt-mark showmanual >> temp.txt
+
+python3_action="False"
+
+# Has curl been installed?  If not install it
+python3_installed=$(cat temp.txt | grep -w "python3")
+if [ "" == "$python3_installed" ]; then
+  sudo apt-get --force-yes --yes install python3
+  python3_action="True"
+else
+  echo "python3 already installed"
+fi
 
 vim_action="False"
 
@@ -43,6 +56,8 @@ else
   echo "git already installed"
 fi
 
+git_version=$(git --version)
+
 openssh_server_action="False"
 
 openssh_server_installed=$(cat temp.txt | grep -w "openssh-server")
@@ -70,6 +85,12 @@ fi
 
 clear
 
+python3_version=$(python3 --version)
+git_version=$(git --version)
+curl_version=$(curl --version | grep curl | cut -c1-12)
+nvm_version=$(nvm --version)
+vim_version=$(vim --version | grep compiled)
+
 echo "--------------------------------------------"
 echo "||      Installing Necesary Software      || "
 echo "--------------------------------------------"
@@ -79,6 +100,8 @@ else
   echo "|        vim |          has been installed |"
 fi
 
+echo "|            |                 $vim_version"
+
 echo "--------------------------------------------"
 if [ "False" == "$curl_action" ]; then
   echo "|       curl |       was already installed |"
@@ -86,12 +109,16 @@ else
   echo "|       curl |          has been installed |"
 fi
 
+echo "|            |                 $curl_version|"
+
 echo "--------------------------------------------"
 if [ "False" == "$git_action" ]; then
   echo "|        git |       was already installed |"
 else
   echo "|        git |          has been installed |"
 fi
+
+echo "|            |          $git_version |"
 
 echo "--------------------------------------------"
 if [ "False" == "$openssh_server_action" ]; then
@@ -107,5 +134,17 @@ else
   echo "|        nvm |          has been installed |"
 fi
 
+echo "|            |          $nvm_version "
+
 echo "--------------------------------------------"
+if [ "False" == "$python3_action" ]; then
+  echo "|    python3 |       was already installed |"
+else
+  echo "|    python3 |          has been installed |"
+fi
+
+echo "|            |             $python3_version |"
+
+echo "--------------------------------------------"
+
 

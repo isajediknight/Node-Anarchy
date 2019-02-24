@@ -17,7 +17,7 @@ python3_action="False"
 # Has curl been installed?  If not install it
 python3_installed=$(cat temp.txt | grep -w "python3")
 if [ "" == "$python3_installed" ]; then
-  sudo apt-get --force-yes --yes install python3
+  sudo apt-get --allow --yes install python3
   python3_action="True"
 else
   echo "python3 already installed"
@@ -28,7 +28,7 @@ vim_action="False"
 # Has curl been installed?  If not install it
 vim_installed=$(cat temp.txt | grep -w "vim")
 if [ "" == "$vim_installed" ]; then
-  sudo apt-get --force-yes --yes install vim
+  sudo apt-get --allow --yes install vim
   vim_action="True"
 else
   echo "vim already installed"
@@ -39,7 +39,7 @@ curl_action="False"
 # Has curl been installed?  If not install it
 curl_installed=$(cat temp.txt | grep -w "curl")
 if [ "" == "$curl_installed" ]; then
-  sudo apt-get --force-yes --yes install curl
+  sudo apt-get --allow --yes install curl
   curl_action="True"
 else
   echo "curl already installed"
@@ -50,7 +50,7 @@ git_action="False"
 # Has git been installed?  If not install it
 git_installed=$(cat temp.txt | grep -w "git")
 if [ "" == "$git_installed" ]; then
-  sudo apt-get --force-yes --yes install git
+  sudo apt-get --allow --yes install git
   git_action="True"
 else
   echo "git already installed"
@@ -62,7 +62,7 @@ openssh_server_action="False"
 
 openssh_server_installed=$(cat temp.txt | grep -w "openssh-server")
 if [ "" == "$openssh_server_installed" ]; then
-  sudo apt-get --force-yes --yes install openssh-server
+  sudo apt-get --allow --yes install openssh-server
   openssh_server_action="True"
 else
   echo "openssh-server already installed"

@@ -78,6 +78,18 @@ else
   echo "openssh-server already installed"
 fi
 
+npm_action="False"
+
+npm_installed=$(cat temp.txt | grep -w "npm")
+if [ "" == "$npm_installed" ]; then
+  # --allow does not work
+  #sudo apt-get --allow --yes install npm
+  sudo apt-get --force-yes --yes install npm
+  npm_action="True"
+else
+  echo "npm already installed"
+fi
+
 # Remove the temporary file we used to see what was installed
 rm -rf temp.txt
 
@@ -100,6 +112,7 @@ git_version=$(git --version)
 curl_version=$(curl --version | grep curl | cut -c1-12)
 nvm_version=$(nvm --version)
 vim_version=$(vim --version | grep compiled)
+npm_version=$(npm --version)
 
 echo "--------------------------------------------"
 echo "||      Installing Necesary Software      || "
@@ -154,6 +167,15 @@ else
 fi
 
 echo "|            |             $python3_version |"
+
+echo "--------------------------------------------"
+if [ "False" == "$npm_action" ]; then
+  echo "|        npm |       was already installed |"
+else
+  echo "|        npm |          has been installed |"
+fi
+
+echo "|            |             $npm_version |"
 
 echo "--------------------------------------------"
 

@@ -4,7 +4,7 @@
 # to run the code for Node-Anarchy Node JS CMS
 
 # How to run:
-# bash ./install.sh
+# bash ./install_run_1st.sh
 
 # Add node redis?
 

@@ -86,7 +86,7 @@ nvm_action="False"
 # Has nvm been installed?  If not install it
 if [ ! -d "/home/$USER/.nvm" ]; then
   # If desired change the nvm version being installed from the URL below
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
   bash --login
   echo "Please note that to use nvm immediately a new bash prompt was launched"
 else

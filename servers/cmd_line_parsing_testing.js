@@ -1,44 +1,12 @@
-var argv = require('minimist')(process.argv.slice(2));
 var dunno = require('cmdl_parse_helper');
 
-console.log(dunno.myDateTime());
-
-/*
- * Debugging
-console.log("Passed in parameters:");
-console.dir(argv);
-console.log("");
-*/
-
-/*
-// List of all actual keys
-var keys = Object.keys(argv);
-//console.log(keys);// Debugging
-
-// List of human defined keys passed in
-var defined_keys = []
-
-// Parameters with no Value passed in
-var bad_parameters = []
-
-// Correct Paramters
-var good_parameters = []
-
-for (var index = 0; index < keys.length; index++) {
- //console.log(keys[index] + ": "+ argv[keys[index]]);
- if(argv[keys[index]] === true) {
-  bad_parameters.push(keys[index]);
-  defined_keys.push(keys[index]);
- }
- else if((argv[keys[index]] != null) && (keys[index] != '_')) {
-  good_parameters.push(keys[index]);
-  defined_keys.push(keys[index]);
- }
-}
+// Example method call
+//console.log(dunno.myDateTime());
 
 console.log("\nKeys: " + defined_keys);
 console.log("Good Parameters: " + good_parameters);
 console.log("Bad Parameters: " + bad_parameters);
+console.log("Bad Values: " + bad_values);
 
 // Values with no Parameter passed in
 var bad_values = []

@@ -2,31 +2,21 @@ var dunno = require('cmdl_parse_helper');
 
 // Example method call
 //console.log(dunno.myDateTime());
+ans = dunno.parsed_parameters(['e'],true);
 
-console.log("\nKeys: " + defined_keys);
-console.log("Good Parameters: " + good_parameters);
-console.log("Bad Parameters: " + bad_parameters);
-console.log("Bad Values: " + bad_values);
-
-// Values with no Parameter passed in
-var bad_values = []
-
-for (index = 0; index < argv['_'].length; index++) {
- if(argv[['_'][index]] == null) {
-  //pass
- }
- else {
-  bad_values.push(argv[['_'][index]])
- }
+if(!(ans === false)) {
+ console.log("\nKeys: " + ans['human_keys']);
+ console.log("Good Parameters: " + ans['good_parameters']);
+ console.log("Bad Parameters: " + ans['bad_parameters']);
+ console.log("Bad Values: " + ans['bad_values']);
 }
 
-console.log("Bad Values: " + bad_values + "\n");
-*/
-
+/*
 console.log("Print Class Values Here:");
 console.log("Keys: " + dunno.parsed_parameters('defined_keys'));
 console.log("Good Parameters: " + dunno.parsed_parameters('good_parameters'));
 console.log("Bad Parameters: " + dunno.parsed_parameters('bad_parameters'));
+*/
 
 /*
  * Debugging

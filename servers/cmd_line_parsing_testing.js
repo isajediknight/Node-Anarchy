@@ -1,8 +1,19 @@
-var dunno = require('cmdl_parse_helper');
 
-// Example method call
-//console.log(dunno.myDateTime());
-ans = dunno.parsed_parameters(['e'],true);
+/********************************************
+ * Module Setup BEGIN
+ */
+
+// Parse Parameters passed in
+var dunno = require('cmdl_parse_helper');
+var ans = dunno.parsed_parameters(['e'],true);
+
+// Text Coloration for console.log()
+var helper = require('node_anarchy_helper');
+var txt = helper.text_coloration();
+
+/*
+ * Module Setup END
+ *******************************************/
 
 if(!(ans === false)) {
  console.log("\nKeys: " + ans['human_keys']);

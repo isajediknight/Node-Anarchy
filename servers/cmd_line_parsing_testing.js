@@ -3,9 +3,11 @@
  * Module Setup BEGIN
  */
 
+var my_required_parameters = ['e']
+
 // Parse Parameters passed in
 var dunno = require('cmdl_parse_helper');
-var ans = dunno.parsed_parameters(['e'],true);
+var ans = dunno.parsed_parameters(my_required_parameters,true);
 
 // Text Coloration for console.log()
 var helper = require('node_anarchy_helper');
@@ -20,6 +22,7 @@ if(!(ans === false)) {
  console.log("Good Parameters: " + ans['good_parameters']);
  console.log("Bad Parameters: " + ans['bad_parameters']);
  console.log("Bad Values: " + ans['bad_values']);
+ console.log("Required Parameters: " + ans['required_parameters']);
 }
 
 /*

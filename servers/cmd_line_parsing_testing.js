@@ -3,6 +3,7 @@
  * Module Setup BEGIN
  */
 
+// Must be an Array
 var my_required_parameters = ['e']
 
 // Parse Parameters passed in
@@ -18,11 +19,11 @@ var txt = helper.text_coloration();
  *******************************************/
 
 if(!(ans === false)) {
- console.log("\nKeys: " + ans['human_keys']);
- console.log("Good Parameters: " + ans['good_parameters']);
- console.log("Bad Parameters: " + ans['bad_parameters']);
- console.log("Bad Values: " + ans['bad_values']);
- console.log("Required Parameters: " + ans['required_parameters']);
+ console.log("\n               Keys: " + txt['subtle']+ans['human_keys'] + txt['end']);
+ console.log("    Good Parameters: " +txt['passed']+ ans['good_parameters'] + txt['end']);
+ console.log("     Bad Parameters: " +txt['error'] + ans['bad_parameters'] + txt['end']);
+ console.log("         Bad Values: " + txt['error'] +ans['bad_values'] + txt['end']);
+ console.log(txt['notify']+"Required"+txt['end']+" Parameters: " + txt['notify']+ ans['required_parameters']+txt['end']);
 }
 
 /*

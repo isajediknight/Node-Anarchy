@@ -4,7 +4,7 @@
  */
 
 // Must be an Array
-var my_required_parameters = ['e']
+var my_required_parameters = 'eabcdef'
 
 // Parse Parameters passed in
 var dunno = require('cmdl_parse_helper');
@@ -19,18 +19,21 @@ var txt = helper.text_coloration();
  *******************************************/
 
 var begin = new Date();
-console.log(txt['subtle']+"<"+txt['end']+" File Info "+txt['subtle']+">"+txt['end']);
+console.log(txt['subtle']+"<"+txt['end']+" Script Info "+txt['subtle']+">"+txt['end']);
 console.log("Current Working Directory: "+txt['hidden']+process.cwd()+txt['end']);
 console.log("Program Began: "+txt['date']+begin+txt['end']);
 console.log("Script: " +txt['metric']+process.argv[1]+txt['end']);
 
-if(!(ans === false)) {
- console.log("\n               Keys: " + txt['subtle']+ans['human_keys'] + txt['end']);
- console.log("    Good Parameters: " +txt['passed']+ ans['good_parameters'] + txt['end']);
- console.log("     Bad Parameters: " +txt['error'] + ans['bad_parameters'] + txt['end']);
- console.log("         Bad Values: " + txt['error'] +ans['bad_values'] + txt['end']);
- console.log(txt['notify']+"Required"+txt['end']+" Parameters: " + txt['notify']+ ans['required_parameters']+txt['end']);
+if(ans['required_parameters_met']) {
+ console.log("!!!printed from main < "+txt['notify']+"Required"+txt['end']+" "+txt['user']+"Parameters"+txt['end']+" were "+txt['passed']+"met"+txt['end']+"  >")
 }
+
+console.log("\n               Keys: " + txt['subtle']+ans['human_keys'] + txt['end']);
+console.log("    Good Parameters: " +txt['passed']+ ans['good_parameters'] + txt['end']);
+console.log("     Bad Parameters: " +txt['error'] + ans['bad_parameters'] + txt['end']);
+console.log("         Bad Values: " + txt['error'] +ans['bad_values'] + txt['end']);
+console.log("  Missed Parameters: " + txt['error']+ans['missed_parameters'] + txt['end']);
+console.log("Required Parameters: " + txt['notify']+ ans['required_parameters']+txt['end']);
 
 /*
 console.log("Print Class Values Here:");
@@ -80,8 +83,7 @@ async function demo() {
 
 // Debug
 // Testing Date Diff
-var end = new Date("March 8, 2019 11:59:01");
+var end = new Date("March 9, 2019 23:59:01");
 console.log("Program End: "+txt['date']+end+txt['end']);
 console.log(txt['date']+helper.date_diff(begin,end,'human readable')+txt['end']);
-
 

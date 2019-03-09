@@ -18,6 +18,12 @@ var txt = helper.text_coloration();
  * Module Setup END
  *******************************************/
 
+var begin = new Date();
+console.log(txt['subtle']+"<"+txt['end']+" File Info "+txt['subtle']+">"+txt['end']);
+console.log("Current Working Directory: "+txt['hidden']+process.cwd()+txt['end']);
+console.log("Program Began: "+txt['date']+begin+txt['end']);
+console.log("Script: " +txt['metric']+process.argv[1]+txt['end']);
+
 if(!(ans === false)) {
  console.log("\n               Keys: " + txt['subtle']+ans['human_keys'] + txt['end']);
  console.log("    Good Parameters: " +txt['passed']+ ans['good_parameters'] + txt['end']);
@@ -59,3 +65,23 @@ else {
  console.log("a: " + argv['a']);
 }
 */
+
+/*
+// I love and hate asynchronus code
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+async function demo() {
+  console.log('Taking a break...');
+  await sleep(2000);
+  console.log('Two seconds later');
+}
+*/
+
+// Debug
+// Testing Date Diff
+var end = new Date("March 8, 2019 11:59:01");
+console.log("Program End: "+txt['date']+end+txt['end']);
+console.log(txt['date']+helper.date_diff(begin,end,'human readable')+txt['end']);
+
+

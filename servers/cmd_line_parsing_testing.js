@@ -4,7 +4,7 @@
  */
 
 // Must be an Array
-var my_required_parameters = 'eabcdef'
+var my_required_parameters = ['e','a','b']
 
 // Parse Parameters passed in
 var dunno = require('cmdl_parse_helper');
@@ -24,9 +24,10 @@ console.log("Current Working Directory: "+txt['hidden']+process.cwd()+txt['end']
 console.log("Program Began: "+txt['date']+begin+txt['end']);
 console.log("Script: " +txt['metric']+process.argv[1]+txt['end']);
 
-if(ans['required_parameters_met']) {
- console.log("!!!printed from main < "+txt['notify']+"Required"+txt['end']+" "+txt['user']+"Parameters"+txt['end']+" were "+txt['passed']+"met"+txt['end']+"  >")
-}
+// Debug
+//if(ans['required_parameters_met']) {
+// console.log("!!!printed from main < "+txt['notify']+"Required"+txt['end']+" "+txt['user']+"Parameters"+txt['end']+" were "+txt['passed']+"met"+txt['end']+"  >")
+//}
 
 console.log("\n               Keys: " + txt['subtle']+ans['human_keys'] + txt['end']);
 console.log("    Good Parameters: " +txt['passed']+ ans['good_parameters'] + txt['end']);

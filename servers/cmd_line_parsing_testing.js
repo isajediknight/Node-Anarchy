@@ -19,10 +19,6 @@ var txt = helper.text_coloration();
  *******************************************/
 
 var begin = new Date();
-console.log(txt['subtle']+"<"+txt['end']+" Script Info "+txt['subtle']+">"+txt['end']);
-console.log("Current Working Directory: "+txt['hidden']+process.cwd()+txt['end']);
-console.log("Program Began: "+txt['date']+begin+txt['end']);
-console.log("Script: " +txt['metric']+process.argv[1]+txt['end']);
 
 // Debug
 //if(ans['required_parameters_met']) {
@@ -84,7 +80,13 @@ async function demo() {
 
 // Debug
 // Testing Date Diff
-var end = new Date("March 9, 2019 23:59:01");
+var end = new Date("March 10, 2019 23:59:01");
+console.log(txt['subtle']+"<"+txt['end']+" Script Info "+txt['subtle']+">"+txt['end']);
+console.log("Current Working Directory: "+txt['hidden']+process.cwd()+txt['end']);
+console.log("Program Began: "+txt['date']+begin+txt['end']);
+console.log("Script: " +txt['metric']+process.argv[1]+txt['end']);
 console.log("Program End: "+txt['date']+end+txt['end']);
 console.log(txt['date']+helper.date_diff(begin,end,'human readable')+txt['end']);
 
+// Debug
+//console.log(ans);

@@ -4,7 +4,7 @@
  */
 
 // Must be an Array
-var my_required_parameters = 'a e b'//['e','a','b']
+var my_required_parameters = ['e','a','b']
 
 // Parse Parameters passed in
 var dunno = require('cmdl_parse_helper');
